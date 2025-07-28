@@ -1,5 +1,6 @@
 {
-  "name": "Headscale Custom Add-ons",
+  "name": "Yoata Custom Add-ons",
+   "udev": true,
   "url": "https://github.com/ViniciusYoata/HomeAssistant-Addons",
   "maintainer": "Vinicius Yoata"
 }
