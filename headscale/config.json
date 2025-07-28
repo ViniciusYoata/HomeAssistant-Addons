@@ -1,5 +1,5 @@
 {
-  "name": "Headscale",
+  "name": "Headscale v0.2",
   "version": "1.0.0",
   "slug": "headscale",
   "description": "Headscale server for Tailscale clients",
@@ -13,6 +13,11 @@
     "config:rw",
     "ssl:rw"
   ],
-  "options": {},
-  "schema": {}
+  "image": "headscale/headscale:latest",
+  "init": true,
+  "command": [
+    "serve",
+    "--config",
+    "/config/headscale/config.yaml"
+  ]
 }
