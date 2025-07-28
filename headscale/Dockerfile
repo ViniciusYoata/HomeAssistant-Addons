@@ -1,0 +1,1 @@
+FROM headscale/headscale:latest
