@@ -1,0 +1,19 @@
+{
+  "name": "Headscale",
+  "version": "1.0.0",
+  "slug": "headscale",
+  "description": "Headscale server for Tailscale clients",
+  "arch": ["aarch64", "amd64"],
+  "startup": "services",
+  "boot": "auto",
+  "ports": {
+    "443/tcp": 443
+  },
+  "map": [
+    "config:rw",
+    "ssl:rw"
+  ],
+  "options": {},
+  "schema": {},
+  "image": "local/headscale:latest"
+}
