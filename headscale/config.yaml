@@ -1,8 +1,10 @@
-version: "0.2.9"
-slug: "headscale"
-description: "Servidor Headscale custom como Add-on"
+name: Headscale
+description: Servidor Headscale custom como Add-on
+version: "0.3"
+slug: headscale
 startup: services
 boot: auto
+hassio_api: false
 host_network: true
 arch:
   - amd64
@@ -14,8 +16,9 @@ map:
   - ssl:ro
   - config:rw
   - share:rw
+
 options:
-  config:
+  config: |-
     server_url: "https://seudominio.duckdns.org:8080"
     listen_addr: "0.0.0.0:8080"
     grpc_listen_addr: "0.0.0.0:9090"
@@ -31,17 +34,4 @@ options:
       level: "info"
 
 schema:
-  config:
-    server_url: str
-    listen_addr: str
-    grpc_listen_addr: str
-    db_type: list(sqlite3|postgres)
-    db_path: str
-    private_key_path: str
-    noise:
-      private_key_path: str
-    tls_cert_path: str
-    tls_key_path: str
-    ephemeral_node_inactivity_timeout: str
-    log:
-      level: list(debug|info|warn|error|fatal)
+  config: str
