@@ -1,16 +1,22 @@
-name: Headscale
-version: "1.0"
-slug: headscale
-description: Headscale server custom
+name: "Headscale"
+version: "0.2.3"
+slug: "headscale"
+description: "Servidor Headscale custom como Add-on"
 startup: services
 boot: auto
 host_network: true
+arch:
+  - amd64
+  - aarch64
+  - armv7
+  - armhf
+  - i386
 map:
   - ssl:ro
-  - share:rw
   - config:rw
+  - share:rw
 options:
-  server_url: "https://dominio.duckdns.org:8080"
+  server_url: "https://seudominio.duckdns.org:8080"
   listen_addr: "0.0.0.0:8080"
   grpc_listen_addr: "0.0.0.0:9090"
   db_type: "sqlite3"
