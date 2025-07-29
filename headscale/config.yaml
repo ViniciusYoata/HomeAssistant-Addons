@@ -27,3 +27,4 @@ schema:
   grpc_listen_addr: str
   db_type: list(sqlite3|postgres)
   db_path: str
+  
