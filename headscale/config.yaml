@@ -1,6 +1,6 @@
 
-name: "Headscale"
-version: "0.2.8"
+version: "0.2.9"
+
 slug: "headscale"
 description: "Servidor Headscale custom como Add-on"
 startup: services
