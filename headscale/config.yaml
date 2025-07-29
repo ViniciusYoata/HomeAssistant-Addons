@@ -1,0 +1,23 @@
+name: Headscale
+version: "1.0"
+slug: headscale
+description: Headscale server custom
+startup: services
+boot: auto
+host_network: true
+map:
+  - ssl:ro
+  - share:rw
+  - config:rw
+options:
+  server_url: "https://dominio.duckdns.org:8080"
+  listen_addr: "0.0.0.0:8080"
+  grpc_listen_addr: "0.0.0.0:9090"
+  db_type: "sqlite3"
+  db_path: "/var/lib/headscale/db.sqlite"
+schema:
+  server_url: str
+  listen_addr: str
+  grpc_listen_addr: str
+  db_type: list(sqlite3|postgres)
+  db_path: str
