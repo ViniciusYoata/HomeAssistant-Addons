@@ -1,3 +1,5 @@
+#!/bin/sh
+set -e
 ARG BUILD_FROM=ghcr.io/hassio-addons/base-alpine:13.2.0
 FROM ${BUILD_FROM}
 
@@ -8,4 +10,4 @@ RUN curl -Lo /usr/local/bin/headscale https://github.com/juanfont/headscale/rele
 
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
-CMD [ "/run.sh" ]
+CMD [ "sh", "/run.sh" ]
