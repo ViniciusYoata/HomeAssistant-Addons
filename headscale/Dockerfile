@@ -14,6 +14,8 @@ RUN echo "[DEBUG] Baixando Headscale..." \
 RUN echo "[DEBUG] Conteúdo do contexto de build antes de copiar run.sh:" && ls -lh /
 
 COPY run.sh /run.sh
+
+RUN echo "[DEBUG] listando root do container" && ls -lah /
 RUN echo "[DEBUG] Copiou run.sh?" && ls -lh /run.sh && cat /run.sh
 
 RUN chmod +x /run.sh
