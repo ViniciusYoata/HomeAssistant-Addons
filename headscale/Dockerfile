@@ -1,5 +1,3 @@
-#!/bin/sh
-set -e
 ARG BUILD_FROM=ghcr.io/hassio-addons/base-alpine:13.2.0
 FROM ${BUILD_FROM}
 
