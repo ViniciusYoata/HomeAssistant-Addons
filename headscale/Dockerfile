@@ -8,4 +8,5 @@ RUN curl -Lo /usr/local/bin/headscale https://github.com/juanfont/headscale/rele
 
 COPY run.sh /
 RUN chmod a+x /run.sh
-CMD ["/run.sh" ]
+
+CMD ["sh", "run.sh"]

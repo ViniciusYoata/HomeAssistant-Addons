@@ -1,7 +1,8 @@
 name: Headscale
 description: Servidor Headscale custom como Add-on
-version: "0.3.2"
+version: "0.3.3"
 slug: headscale
+init: true
 startup: services
 boot: auto
 hassio_api: false
