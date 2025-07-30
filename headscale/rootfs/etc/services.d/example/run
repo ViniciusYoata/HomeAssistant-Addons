@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv sh
+set -e
+
+echo "[INFO] Gerando arquivo de configuração do Headscale..."
+
+# A variável $CONFIG já é injetada pelo Supervisor
+echo "$CONFIG" > /config/headscale.yaml
+
+echo "[INFO] Iniciando Headscale..."
+exec /usr/local/bin/headscale serve --config /config/headscale.yaml
