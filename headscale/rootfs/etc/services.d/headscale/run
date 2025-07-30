@@ -1,10 +1,8 @@
-#!/usr/bin/with-contenv sh
+#!/usr/bin/with-contenv bashio
 set -e
 
-echo "[INFO] Gerando arquivo de configuração do Headscale..."
+bashio::log.info "Copiando configuração para /config/headscale.yaml"
+bashio::config 'config' > /config/headscale.yaml
 
-# A variável $CONFIG já é injetada pelo Supervisor
-echo "$CONFIG" > /config/headscale.yaml
-
-echo "[INFO] Iniciando Headscale..."
+bashio::log.info "Iniciando Headscale..."
 exec /usr/local/bin/headscale serve --config /config/headscale.yaml
