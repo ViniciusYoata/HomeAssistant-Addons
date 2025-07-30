@@ -1,0 +1,38 @@
+name: Headscale2
+description: Servidor Headscale custom como Add-on
+version: "0.4.4"
+slug: headscale2
+init: true
+startup: services
+boot: auto
+hassio_api: false
+host_network: true
+arch:
+  - amd64
+  - aarch64
+  - armv7
+  - armhf
+  - i386
+map:
+  - ssl:ro
+  - config:rw
+  - share:rw
+
+options:
+  config: |-
+    server_url: "https://seudominio.duckdns.org:8080"
+    listen_addr: "0.0.0.0:8080"
+    grpc_listen_addr: "0.0.0.0:9090"
+    db_type: "sqlite3"
+    db_path: "/config/headscale.db"
+    private_key_path: "/config/private.key"
+    noise:
+      private_key_path: "/config/noise_private.key"
+    tls_cert_path: "/ssl/fullchain.pem"
+    tls_key_path: "/ssl/privkey.pem"
+    ephemeral_node_inactivity_timeout: "30m"
+    log:
+      level: "info"
+
+schema:
+  config: str
